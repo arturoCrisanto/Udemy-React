@@ -1,7 +1,7 @@
 import classses from './NewPost.module.css';
 import { useState } from 'react';
 
-function NewPost({onCloseModal}) { 
+function NewPost({onCloseModal,onCreatePost}) { 
     const [enteredBody, setBody] = useState('dina karigo hi alexa');
     const [enteredAuthor, setAuthor] = useState('alexa');
 
@@ -13,13 +13,14 @@ function onAuthorChangeHandler(event) {
   setAuthor(event.target.value);
 }
 
+// This function is called when the form is submitted
 function onSubmitHandler(event) {
   event.preventDefault();
   const postData = {
     body: enteredBody,
     author: enteredAuthor
   };
-  console.log(postData);
+  onCreatePost(postData);
   onCloseModal();
 }
 
