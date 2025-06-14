@@ -25,21 +25,22 @@ function onCreatePostHandler(postData) {
         onCreatePost={onCreatePostHandler}
         />
     </Modal>
-     : null}
-    
-      {posts.length > 0 && 
-          <ul className={classes.post}>
-            {posts.map((post, index) => (
-              <Post 
-                key={index}
-                // the post object has body and author properties in the NewPost component
-                // so we can destructure them here
-                body={post.body}
-                author={post.author}
-              />
-            ))}
-          </ul> 
-      }
+     : null
+     }
+
+    {posts.length > 0 && 
+        <ul className={classes.post}>
+          {posts.map((post, index) => (
+            <Post 
+              key={index}
+              // the post object has body and author properties in the NewPost component
+              // so we can destructure them here
+              body={post.body}
+              author={post.author}
+            />
+          ))}
+        </ul> 
+    }
     {posts.length === 0 &&
       <p className={classes.noPosts}>No posts yet. Create one!</p>
     }
