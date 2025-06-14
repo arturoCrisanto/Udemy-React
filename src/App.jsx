@@ -3,7 +3,7 @@ import PostList from "./components/PostList"
 import { useState } from "react";
 
 function App() {
-  const [modalIsOpen, setModalIsOpen] = useState(true);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
   
   function onCloseModalHandler() {
   setModalIsOpen(false);

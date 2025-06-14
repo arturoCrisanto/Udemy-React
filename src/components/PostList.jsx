@@ -23,6 +23,7 @@ function onAuthorChangeHandler(event) {
     <NewPost 
         onBodyChange={onBodyChangeHandler}
         onAuthorChange={onAuthorChangeHandler}
+        onCloseModal={onCloseModal}
         />
     </Modal>
      : null}
