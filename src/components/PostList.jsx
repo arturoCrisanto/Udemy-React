@@ -5,24 +5,12 @@ import {useState} from 'react';
 import Modal from './Modal.jsx';
 
 function PostList({modalIsOpen, onCloseModal}) {
-    const [enteredBody, set] = useState('dina karigo hi alexa');
-    const [author, setAuthor] = useState('alexa');
-
-
-function onBodyChangeHandler(event) {
-  set(event.target.value);
-}
-function onAuthorChangeHandler(event) {
-  setAuthor(event.target.value);
-}
 
   return (
     <>
     {modalIsOpen ? 
     <Modal onCloseModal={onCloseModal}>
     <NewPost 
-        onBodyChange={onBodyChangeHandler}
-        onAuthorChange={onAuthorChangeHandler}
         onCloseModal={onCloseModal}
         />
     </Modal>
@@ -30,7 +18,6 @@ function onAuthorChangeHandler(event) {
     
 
     <ul className={classes.post}>
-        <Post author={author} body={enteredBody}/>
         <Post author="2" body="WEWWEA"/>
     </ul>
     </>
